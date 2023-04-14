@@ -10,7 +10,7 @@ export default async function Home() {
       <h1 className="text-7xl font-extrabold">
         Hello, i&apos;m{" "}
         <span className="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">
-          "Özay!"
+          &quot;Özay!&quot;
         </span>
       </h1>
 

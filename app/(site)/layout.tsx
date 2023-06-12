@@ -24,7 +24,7 @@ export default async function RootLayout({
         <header className='flex items-center justify-between px-2'>
           <Link 
             href="/"
-            className="bg-gradient-to-r from-violet-400 to-violet-600 bg-clip-text text-transparent text-2xl"
+            className="bg-logo bg-gradient-to-r from-violet-400 to-violet-600 bg-clip-text text-transparent text-2xl"
           >
             curaberlin.de
           </Link>

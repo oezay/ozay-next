@@ -13,7 +13,7 @@ export default async function Home() {
           return (
             <div key={artist._id}>
               <Link href={`/projects/${artist.slug}`} className="">
-                <div className="mt-2 font-extrabold text-2xl text-transparent text-black p-2 hover:bg-gradient-to-r from-violet-400 to-violet-600 transition hover:text-white transition">
+                <div className="mt-2 font-extrabold text-2xl text-transparent text-black p-2 hover:bg-gradient-to-r from-violet-400 to-violet-600 transition">
                   {artist.name}
                 </div>
               </Link>

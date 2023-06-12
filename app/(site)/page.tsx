@@ -6,9 +6,9 @@ export default async function Home() {
   const artists = await getArtist();
 
   return (
-    <div className="flex">
+    <div className="">
        <div>
-          <div className="w-1/2">
+          <div className="">
         {artists.map((artist) => {
           return (
             <div key={artist._id}>
@@ -17,14 +17,20 @@ export default async function Home() {
                   {artist.name}
                 </div>
               </Link>
+              <div>
+              {artist.image && (
+                <Image
+                  src={artist.image}
+                  alt={artist.name}
+                  width={1920}
+                  height={1080}
+                  className="object-cover border border-gray-500"/>
+              )}
+              </div>
             </div>
           );
         })}
         </div>
-        <div className="w-1/2">
-        {/* Replace with your placeholder image */}
-        <img src="/placeholder.jpg" alt="Placeholder" />
-      </div>
       </div>
     </div>
   );

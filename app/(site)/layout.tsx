@@ -3,8 +3,8 @@ import '../globals.css'
 import { getPages } from '@/sanity/sanity-utils';
 
 export const metadata = {
-  title: 'OZAY STUDIO',
-  description: 'GRAPHIC DESIGN - KOTTBUSER TOR',
+  title: 'CURA Berlin',
+  description: 'Booking Agency with a big <3',
 }
 
 export default async function RootLayout({
@@ -19,17 +19,17 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
-      <body className='max-w-3xl mx-auto py-5'>
+      <body className='max-w-1xl mx-auto py-2'>
         
-        <header className='flex items-center justify-between'>
+        <header className='flex items-center justify-between px-2'>
           <Link 
             href="/"
-            className="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent text-2xl"
+            className="bg-gradient-to-r from-violet-400 to-violet-600 bg-clip-text text-transparent text-2xl"
           >
-            ozay.de
+            curaberlin.de
           </Link>
 
-          <div className='flex items-center gap-5 text-sm text-gray-600'>
+          <div className='flex items-center gap-3 text-sm text-gray-600'>
 
             {pages.map((page) => (
               <Link key={page._id} href={`/${page.slug}`} className='hover:underline'>
@@ -39,7 +39,7 @@ export default async function RootLayout({
           </div>
         </header>
         
-        <main className='py-20'>
+        <main className='py-5'>
           {children}
         </main>
 

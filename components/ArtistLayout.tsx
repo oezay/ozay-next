@@ -32,7 +32,7 @@ export default function ArtistLayout(props: ArtistListProps) {
           <ArtistProfile artist={selected} />
         ) : (
           <section
-            className="h-full bg-cover flex flex-col"
+            className="h-full bg-cover bg-center flex flex-col"
             style={{
               backgroundImage: `url(https://picsum.photos/seed/cura2/650/650?grayscale&blur=2)`,
             }}

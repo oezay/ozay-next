@@ -9,7 +9,7 @@ export interface ArtistProfileProps {
 export default function ArtistProfile(props: ArtistProfileProps) {
   return (
     <section
-      className="h-full bg-cover flex flex-col"
+      className="h-full bg-cover bg-center flex flex-col"
       style={{ backgroundImage: `url("${props.artist.image}")` }}
     >
       <h1 className="text-white mt-auto text-4xl m-2">{props.artist.name}</h1>

@@ -10,10 +10,11 @@ export interface ArtistListProps {
 }
 
 export default function ArtistLayout(props: ArtistListProps) {
-  const [selected, setHovered] = useState(null);
+  const [selected, setHovered] = useState<Artist | null>(null);
 
   const setHoveredItem = (key: Artist["_id"]) => {
-    setHovered(props.artists.find((artist) => artist._id === key));
+    const artist = props.artists.find((artist) => artist._id === key);
+    if (artist) setHovered(artist);
   };
 
   const setDefaultContent = () => {

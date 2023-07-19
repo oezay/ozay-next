@@ -19,7 +19,8 @@ export default function ArtistList(props: ArtistListProps) {
             <li
               key={id}
               tabIndex={0}
-              className="flex px-2 border-t border-violet-500"
+              // className="flex px-2 border-t border-violet-500 "
+              className="font-extrabold text-2xl text-black p-2 hover:bg-gradient-to-r from-violet-400 to-violet-600 transition hover:text-white transition"
               onMouseEnter={() => props.onHover(id)}
               onFocus={() => props.onHover(id)}
             >

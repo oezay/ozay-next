@@ -1,4 +1,4 @@
-import { getProject } from "@/sanity/sanity-utils";
+import { getArtist } from "@/sanity/sanity-utils";
 import { PortableText } from "@portabletext/react";
 import Image from "next/image";
 
@@ -8,7 +8,7 @@ type Props = {
 
 export default async function Project({ params }: Props) {
   const slug = params.project;
-  const project = await getProject(slug);
+  const project = await getArtist(slug);
 
   return (
     <div>

@@ -18,29 +18,31 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
-      <body className="max-w-1xl mx-auto py-2">
-        <header className="flex items-center justify-between px-2">
-          <Link
-            href="/"
-            className="bg-gradient-to-r from-violet-400 to-violet-600 bg-clip-text text-transparent text-2xl"
-          >
-            curaberlin.de
-          </Link>
+      <body className="max-w-1xl mx-auto">
+        <div className="h-screen grid grid-rows-[4rem,1fr] grid-cols-2">
+          <header className="flex items-center justify-between px-2 col-span-2">
+            <Link
+              href="/"
+              className="bg-gradient-to-r from-violet-400 to-violet-600 bg-clip-text text-transparent text-2xl"
+            >
+              curaberlin.de
+            </Link>
 
-          <div className="flex items-center gap-3 text-sm text-gray-600">
-            {pages.map((page) => (
-              <Link
-                key={page._id}
-                href={`/${page.slug}`}
-                className="hover:underline"
-              >
-                {page.title}
-              </Link>
-            ))}
-          </div>
-        </header>
+            <div className="flex items-center gap-3 text-sm text-gray-600">
+              {pages.map((page) => (
+                <Link
+                  key={page._id}
+                  href={`/${page.slug}`}
+                  className="hover:underline"
+                >
+                  {page.title}
+                </Link>
+              ))}
+            </div>
+          </header>
 
-        <main className="py-5">{children}</main>
+          {children}
+        </div>
       </body>
     </html>
   );

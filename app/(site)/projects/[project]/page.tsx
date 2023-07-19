@@ -30,7 +30,7 @@ export default async function Project({ params }: Props) {
 
       {/* content goes here */}
       <div className="text-lg text-gray-700 mt-5">
-        <PortableText value={project.content} />
+        {/* <PortableText value={project.content} /> */}
       </div>
 
       {/* image goes here */}

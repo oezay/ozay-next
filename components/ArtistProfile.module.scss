@@ -1,0 +1,29 @@
+.container {
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  background-image: var(--bg-url);
+}
+
+.title {
+  color: white;
+  font-size: 2.25rem;
+  margin: auto 1rem 0.5rem;
+  font-family: var(--serif);
+  text-transform: uppercase;
+  font-size: 4rem;
+  line-height: 1;
+  font-weight: 300;
+}
+
+.bio {
+  height: 50%;
+  padding: 1.5rem 3rem;
+  line-height: 1.6;
+  font-size: 1.25rem;
+  background-color: var(--color-dark-grey);
+  color: white;
+  overflow: auto;
+}

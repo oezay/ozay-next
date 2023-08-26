@@ -1,0 +1,37 @@
+.nav {
+  height: 100%;
+}
+
+.list {
+  display: grid;
+  grid-auto-rows: auto;
+  height: 100%;
+}
+
+.listItem {
+  color: black;
+  font-family: var(--serif);
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  font-weight: 300;
+  transition: 0.15s ease-in-out;
+  transition-property: background-color, color;
+
+  &:hover {
+    color: white;
+    background-color: var(--color-purple);
+  }
+}
+
+.listItemActive {
+  color: white;
+  background-color: var(--color-purple);
+}
+
+.listItemLink {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+}

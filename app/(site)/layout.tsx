@@ -1,7 +1,9 @@
 import Link from 'next/link'
-import '../globals.css'
 import { getPages } from '@/sanity/sanity-utils'
 import CuraLogo from '../../components/icons/CuraLogo'
+import $ from './layout.module.scss'
+import '../globals.scss'
+import '../typekit.scss'
 
 export const metadata = {
   title: 'CURA Berlin',
@@ -9,26 +11,24 @@ export const metadata = {
 }
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
-  // get all of the pages
-
   const pages = await getPages()
 
   return (
     <html lang="en">
       <body className="max-w-1xl mx-auto">
         <div className="h-screen grid grid-rows-[4rem,1fr] grid-cols-2">
-          <header className="flex items-center justify-between px-2 col-span-2">
+          <header className={$.header}>
             <Link href="/" className="color-black">
               <CuraLogo className="w-120" />
             </Link>
 
-            <div className="flex items-center gap-3 text-sm text-gray-600">
+            <nav className={$.nav}>
               {pages.map((page) => (
-                <Link key={page._id} href={`/${page.slug}`} className="hover:underline">
+                <Link key={page._id} href={`/${page.slug}`} className={$.navItem}>
                   {page.title}
                 </Link>
               ))}
-            </div>
+            </nav>
           </header>
 
           {children}

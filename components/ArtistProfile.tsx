@@ -1,23 +1,24 @@
-import { PortableText } from "@portabletext/react";
-import { Artist } from "../types/Artist";
+import { PortableText } from '@portabletext/react'
+import { Artist } from '../types/Artist'
+import $ from './ArtistProfile.module.scss'
 
 export interface ArtistProfileProps {
-  artist: Artist;
-  full?: boolean;
+  artist: Artist
+  full?: boolean
 }
 
 export default function ArtistProfile(props: ArtistProfileProps) {
   return (
     <section
-      className="h-full bg-cover bg-center flex flex-col"
-      style={{ backgroundImage: `url("${props.artist.image}")` }}
+      className={$.container}
+      style={{ ['--bg-url' as string]: `url(${props.artist.image})` }}
     >
-      <h1 className="text-white mt-auto text-4xl m-2">{props.artist.name}</h1>
+      <h1 className={$.title}>{props.artist.name}</h1>
       {props.full && (
-        <div className="h-2/4 p-2 text-white bg-gray-800">
+        <div className={$.bio}>
           <PortableText value={props.artist.bio} />
         </div>
       )}
     </section>
-  );
+  )
 }

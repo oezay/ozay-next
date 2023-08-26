@@ -1,31 +1,30 @@
-"use client";
+'use client'
 
-import { useState } from "react";
-import { Artist } from "../types/Artist";
-import ArtistList from "./ArtistList";
-import ArtistProfile from "./ArtistProfile";
+import { useState } from 'react'
+import { Artist } from '../types/Artist'
+import ArtistList from './ArtistList'
+import ArtistProfile from './ArtistProfile'
 
 export interface ArtistListProps {
-  artists: Artist[];
-  selectedArtist?: Artist;
+  artists: Artist[]
+  selectedArtist?: Artist
 }
 
 export default function ArtistLayout(props: ArtistListProps) {
-  const { artists, selectedArtist } = props;
+  const { artists, selectedArtist } = props
 
-  const [selected, setHovered] = useState<Artist | null>(null);
+  const [selected, setHovered] = useState<Artist | null>(null)
 
-  const setHoveredItem = (key: Artist["_id"]) => {
-    const artist = artists.find((artist) => artist._id === key);
-    if (artist) setHovered(artist);
-  };
+  const setHoveredItem = (key: Artist['_id']) => {
+    const artist = artists.find((artist) => artist._id === key)
+    if (artist) setHovered(artist)
+  }
 
   const setDefaultContent = () => {
-    setHovered(null);
-  };
+    setHovered(null)
+  }
 
-  const isHoveringSelectedArtist =
-    selected && selectedArtist?._id === selected._id;
+  const isHoveringSelectedArtist = selected && selectedArtist?._id === selected._id
 
   return (
     <>
@@ -50,5 +49,5 @@ export default function ArtistLayout(props: ArtistListProps) {
         )}
       </main>
     </>
-  );
+  )
 }

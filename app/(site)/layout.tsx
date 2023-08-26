@@ -1,9 +1,9 @@
 import Link from 'next/link'
 import { getPages } from '@/sanity/sanity-utils'
-import CuraLogo from '../../components/icons/CuraLogo'
+import CuraLogo from '@/components/icons/CuraLogo'
+import '@/app/globals.scss'
+import '@/app/typekit.scss'
 import $ from './layout.module.scss'
-import '../globals.scss'
-import '../typekit.scss'
 
 export const metadata = {
   title: 'CURA Berlin',

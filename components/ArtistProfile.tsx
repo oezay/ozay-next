@@ -1,5 +1,5 @@
 import { PortableText } from '@portabletext/react'
-import { Artist } from '../types/Artist'
+import { Artist } from '@/types/Artist'
 import $ from './ArtistProfile.module.scss'
 
 export interface ArtistProfileProps {

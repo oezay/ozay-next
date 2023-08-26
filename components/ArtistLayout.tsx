@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { Artist } from '../types/Artist'
+import { Artist } from '@/types/Artist'
 import ArtistList from './ArtistList'
 import ArtistProfile from './ArtistProfile'
 

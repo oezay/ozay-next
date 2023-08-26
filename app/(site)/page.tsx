@@ -1,8 +1,8 @@
-import { getArtists } from "@/sanity/sanity-utils";
-import ArtistLayout from "../../components/ArtistLayout";
+import { getArtists } from '@/sanity/sanity-utils'
+import ArtistLayout from '../../components/ArtistLayout'
 
 export default async function Home() {
-  const artists = await getArtists();
+  const artists = await getArtists()
 
-  return <ArtistLayout artists={artists} />;
+  return <ArtistLayout artists={artists} />
 }

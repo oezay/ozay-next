@@ -15,11 +15,11 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 
   return (
     <html lang="en">
-      <body className="max-w-1xl mx-auto">
-        <div className="h-screen grid grid-rows-[4rem,1fr] grid-cols-2">
+      <body className={$.body}>
+        <div className={$.root}>
           <header className={$.header}>
-            <Link href="/" className="color-black">
-              <CuraLogo className="w-120" />
+            <Link href="/" className={$.logoLink}>
+              <CuraLogo className={$.logoIcon} />
             </Link>
 
             <nav className={$.nav}>
@@ -31,7 +31,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             </nav>
           </header>
 
-          {children}
+          <div className={$.content}>{children}</div>
         </div>
       </body>
     </html>

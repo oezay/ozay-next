@@ -1,0 +1,25 @@
+.title {
+}
+
+.page {
+  height: 100%;
+}
+
+.about {
+  background: url('/about-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+}
+
+.aboutText {
+  color: #edf0ef;
+  text-align: center;
+  font-size: 3.5rem;
+  max-width: 45ch;
+  font-weight: 300;
+  line-height: normal;
+  font-family: var(--serif);
+  margin: auto;
+  padding: 2rem;
+}

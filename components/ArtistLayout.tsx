@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { Artist } from '@/types/Artist'
 import ArtistList from './ArtistList'
 import ArtistProfile from './ArtistProfile'
+import $ from './ArtistLayout.module.scss'
 
 export interface ArtistListProps {
   artists: Artist[]
@@ -27,27 +28,27 @@ export default function ArtistLayout(props: ArtistListProps) {
   const isHoveringSelectedArtist = selected && selectedArtist?._id === selected._id
 
   return (
-    <>
+    <div className={$.container}>
       <ArtistList
         content={artists}
         onHover={(name) => setHoveredItem(name)}
         onMouseLeave={setDefaultContent}
         defaultSelected={selectedArtist}
       />
-      <main className="h-full">
+      <main className={$.main}>
         {selected && !isHoveringSelectedArtist ? (
           <ArtistProfile artist={selected} />
         ) : selectedArtist ? (
           <ArtistProfile artist={selectedArtist} full />
         ) : (
           <section
-            className="h-full bg-cover bg-center flex flex-col"
+            className={$.poster}
             style={{
               backgroundImage: `url(https://picsum.photos/seed/cura2/650/650?grayscale&blur=2)`,
             }}
           />
         )}
       </main>
-    </>
+    </div>
   )
 }

@@ -1,11 +1,13 @@
-import { Project } from "@/types/Project";
-import { createClient, groq } from "next-sanity";
-import clientConfig from "./config/client-config";
-import { Page } from "@/types/Page";
-import { Artist } from "@/types/Artist";
+import { Project } from '@/types/Project'
+import { createClient, groq } from 'next-sanity'
+import clientConfig from './config/client-config'
+import { Page } from '@/types/Page'
+import { Artist } from '@/types/Artist'
+
+export const client = createClient(clientConfig)
 
 export async function getProjects(): Promise<Project[]> {
-  return createClient(clientConfig).fetch(
+  return client.fetch(
     groq`*[_type == "project"]{
             _id,
             createdAt,
@@ -15,11 +17,11 @@ export async function getProjects(): Promise<Project[]> {
             url,
             content
         }`
-  );
+  )
 }
 
 export async function getProject(slug: string): Promise<Project> {
-  return createClient(clientConfig).fetch(
+  return client.fetch(
     groq`*[_type == "project" && slug.current == $slug][0]{
             _id,
             createdAt,
@@ -30,22 +32,22 @@ export async function getProject(slug: string): Promise<Project> {
             content
         }`,
     { slug }
-  );
+  )
 }
 
 export async function getPages(): Promise<Page[]> {
-  return createClient(clientConfig).fetch(
+  return client.fetch(
     groq`*[_type == "page"]{
             _id,
             _createdAt,
             title,
             "slug": slug.current
         }`
-  );
+  )
 }
 
 export async function getPage(slug: string): Promise<Page> {
-  return createClient(clientConfig).fetch(
+  return client.fetch(
     groq`*[_type == "page" && slug.current == $slug][0]{
             _id,
             _createdAt,
@@ -54,11 +56,11 @@ export async function getPage(slug: string): Promise<Page> {
             content
         }`,
     { slug }
-  );
+  )
 }
 
 export async function getArtists(): Promise<Artist[]> {
-  return createClient(clientConfig).fetch(
+  return client.fetch(
     groq`*[_type == "artist"]{
             _id,
             _createdAt,
@@ -68,11 +70,11 @@ export async function getArtists(): Promise<Artist[]> {
             "bio": bio,
             "socials": socials
         }`
-  );
+  )
 }
 
 export async function getArtist(slug: string): Promise<Artist> {
-  return createClient(clientConfig).fetch(
+  return client.fetch(
     groq`*[_type == "artist" && slug.current == $slug][0]{
             _id,
             _createdAt,
@@ -83,5 +85,5 @@ export async function getArtist(slug: string): Promise<Artist> {
             "socials": socials
         }`,
     { slug }
-  );
+  )
 }

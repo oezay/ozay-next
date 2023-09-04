@@ -1,3 +1,22 @@
+.body {
+  margin: 0 auto;
+}
+
+.root {
+  display: grid;
+  grid-template-rows: 4rem 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  height: 100vh;
+}
+
+.logoIcon {
+  width: 120px;
+}
+
+.logoLink {
+  color: black;
+}
+
 .header {
   display: flex;
   align-items: center;
@@ -22,4 +41,9 @@
   &:hover {
     text-decoration: underline;
   }
+}
+
+.content {
+  grid-column: span 2;
+  height: 100%;
 }

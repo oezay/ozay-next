@@ -1,5 +1,7 @@
 import { getPage } from '@/sanity/sanity-utils'
 import { PortableText } from '@portabletext/react'
+import clsx from 'clsx'
+import $ from './page.module.scss'
 
 type Props = {
   params: { slug: string }
@@ -7,14 +9,19 @@ type Props = {
 
 export default async function Page({ params }: Props) {
   const page = await getPage(params.slug)
+  const isAboutPage = page.slug === 'about'
 
   return (
-    <div>
-      <h1 className="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent text-7xl">
-        {page.title}
-      </h1>
-
-      <div className="text-lg text-gray-700 mt-10">
+    <div
+      className={clsx($.page, {
+        [$.about]: isAboutPage,
+      })}
+    >
+      <div
+        className={clsx({
+          [$.aboutText]: isAboutPage,
+        })}
+      >
         <PortableText value={page.content} />
       </div>
     </div>

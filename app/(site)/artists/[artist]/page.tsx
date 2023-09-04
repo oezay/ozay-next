@@ -6,8 +6,6 @@ type Props = {
 }
 
 export default async function ArtistPage({ params }: Props) {
-  const slug = params.artist
-  const [artist, artists] = await Promise.all([getArtist(slug), getArtists()])
-
+  const [artist, artists] = await Promise.all([getArtist(params.artist), getArtists()])
   return <ArtistLayout artists={artists} selectedArtist={artist} />
 }

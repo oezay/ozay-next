@@ -41,12 +41,7 @@ export default function ArtistLayout(props: ArtistListProps) {
         ) : selectedArtist ? (
           <ArtistProfile artist={selectedArtist} full />
         ) : (
-          <section
-            className={$.poster}
-            style={{
-              backgroundImage: `url(https://picsum.photos/seed/cura2/650/650?grayscale&blur=2)`,
-            }}
-          />
+          <section className={$.poster} />
         )}
       </main>
     </div>

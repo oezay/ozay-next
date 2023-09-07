@@ -3,8 +3,10 @@
 }
 
 .root {
+  --header-height: 4rem;
+
   display: grid;
-  grid-template-rows: 4rem 1fr;
+  grid-template-rows: var(--header-height) 1fr;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   height: 100vh;
 }
@@ -45,5 +47,5 @@
 
 .content {
   grid-column: span 2;
-  height: 100%;
+  height: calc(100vh - var(--header-height));
 }

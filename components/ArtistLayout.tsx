@@ -5,6 +5,7 @@ import { Artist } from '@/types/Artist'
 import ArtistList from './ArtistList'
 import ArtistProfile from './ArtistProfile'
 import $ from './ArtistLayout.module.scss'
+import { useIsMobile } from '../hooks/mobile'
 
 export interface ArtistListProps {
   artists: Artist[]
@@ -15,6 +16,8 @@ export default function ArtistLayout(props: ArtistListProps) {
   const { artists, selectedArtist } = props
 
   const [selected, setHovered] = useState<Artist | null>(null)
+
+  const isMobile = useIsMobile()
 
   const setHoveredItem = (key: Artist['_id']) => {
     const artist = artists.find((artist) => artist._id === key)
@@ -34,16 +37,19 @@ export default function ArtistLayout(props: ArtistListProps) {
         onHover={(name) => setHoveredItem(name)}
         onMouseLeave={setDefaultContent}
         defaultSelected={selectedArtist}
+        selectedArtist={selectedArtist}
       />
-      <main className={$.main}>
-        {selected && !isHoveringSelectedArtist ? (
-          <ArtistProfile artist={selected} />
-        ) : selectedArtist ? (
-          <ArtistProfile artist={selectedArtist} full />
-        ) : (
-          <section className={$.poster} />
-        )}
-      </main>
+      {!isMobile && (
+        <main className={$.main}>
+          {selected && !isHoveringSelectedArtist ? (
+            <ArtistProfile artist={selected} />
+          ) : selectedArtist ? (
+            <ArtistProfile artist={selectedArtist} full />
+          ) : (
+            <section className={$.poster} />
+          )}
+        </main>
+      )}
     </div>
   )
 }

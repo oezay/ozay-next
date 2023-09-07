@@ -20,7 +20,7 @@ export default function ArtistProfile(props: ArtistProfileProps) {
     .url()} 1280w, ${baseImage.width(1920).url()} 1920w`
 
   return (
-    <section className={$.container} style={{ ['--bg-url' as string]: `url(${baseImage.url()})` }}>
+    <section className={$.container}>
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         className={$.image}

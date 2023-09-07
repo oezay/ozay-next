@@ -37,6 +37,14 @@
 .image {
   position: absolute;
   width: 100%;
-  height: 100%;
+  height: 50%;
   object-fit: cover;
+
+  @media (max-width: 1024px) {
+    object-position: top;
+  }
+
+  @media (min-width: 1024px) {
+    height: 100%;
+  }
 }

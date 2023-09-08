@@ -16,14 +16,14 @@ export interface ArtistListProps {
 }
 
 export default function ArtistList(props: ArtistListProps) {
-  const { content, selectedArtist, defaultSelected, onMouseLeave, onHover } = props
+  const { content, selectedArtist, onMouseLeave, onHover } = props
 
   const isMobile = useIsMobile()
   const artistCount = content.length
 
   return (
     <nav className={$.nav} onMouseLeave={onMouseLeave}>
-      <ul className={$.list} style={{ '--artist-count': artistCount }}>
+      <ul className={$.list} style={{ ['--artist-count' as string]: artistCount }}>
         {content.map((artist) => {
           const { _id: id } = artist
           const isSelectedArtist = selectedArtist?._id === id

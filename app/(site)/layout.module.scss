@@ -3,12 +3,16 @@
 }
 
 .root {
-  --header-height: 4rem;
+  --header-height: 5rem;
 
   display: grid;
   grid-template-rows: var(--header-height) 1fr;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   height: 100vh;
+
+  @media (min-width: 1024px) {
+    min-height: 650px;
+  }
 }
 
 .logoIcon {
@@ -23,7 +27,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 1rem;
+  padding: 0 1.75rem;
   grid-column: span 2 / span 2;
 }
 

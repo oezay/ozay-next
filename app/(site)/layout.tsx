@@ -4,6 +4,8 @@ import CuraLogo from '@/components/icons/CuraLogo'
 import '@/app/globals.scss'
 import '@/app/typekit.scss'
 import $ from './layout.module.scss'
+import { useRouter } from 'next/router'
+import Navigation from '../../components/Navigation'
 
 export const metadata = {
   title: 'CURA Berlin',
@@ -22,13 +24,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
               <CuraLogo className={$.logoIcon} />
             </Link>
 
-            <nav className={$.nav}>
-              {pages.map((page) => (
-                <Link key={page._id} href={`/${page.slug}`} className={$.navItem}>
-                  {page.title}
-                </Link>
-              ))}
-            </nav>
+            <Navigation pages={pages} />
           </header>
 
           <div className={$.content}>{children}</div>

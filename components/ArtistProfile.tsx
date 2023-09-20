@@ -21,15 +21,17 @@ export default function ArtistProfile(props: ArtistProfileProps) {
 
   return (
     <section className={$.container}>
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        className={$.image}
-        src={baseImage.width(960).url()}
-        srcSet={srcSet}
-        alt={`${props.artist.name} cover photo`}
-      />
       <div className={$.contentContainer}>
-        <h1 className={$.title}>{props.artist.name}</h1>
+        <div className={$.titleContainer}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            className={$.image}
+            src={baseImage.width(960).url()}
+            srcSet={srcSet}
+            alt={`${props.artist.name} cover photo`}
+          />
+          <h1 className={$.title}>{props.artist.name}</h1>
+        </div>
         {props.full && (
           <div className={$.bio}>
             <PortableText value={props.artist.bio} />

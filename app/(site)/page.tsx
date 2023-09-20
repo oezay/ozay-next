@@ -6,3 +6,5 @@ export default async function Home() {
 
   return <ArtistLayout artists={artists} />
 }
+
+export const fetchCache = 'force-no-store'

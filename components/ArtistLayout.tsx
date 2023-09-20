@@ -19,31 +19,21 @@ export default function ArtistLayout(props: ArtistListProps) {
 
   const isMobile = useIsMobile()
 
-  const setHoveredItem = (key: Artist['_id']) => {
-    const artist = artists.find((artist) => artist._id === key)
-    if (artist) setHovered(artist)
-  }
-
   const setDefaultContent = () => {
     setHovered(null)
   }
-
-  const isHoveringSelectedArtist = selected && selectedArtist?._id === selected._id
 
   return (
     <div className={$.container}>
       <ArtistList
         content={artists}
-        onHover={(name) => setHoveredItem(name)}
         onMouseLeave={setDefaultContent}
         defaultSelected={selectedArtist}
         selectedArtist={selectedArtist}
       />
       {!isMobile && (
         <main className={$.main}>
-          {selected && !isHoveringSelectedArtist ? (
-            <ArtistProfile artist={selected} />
-          ) : selectedArtist ? (
+          {selectedArtist ? (
             <ArtistProfile artist={selectedArtist} full />
           ) : (
             <section className={$.poster} />

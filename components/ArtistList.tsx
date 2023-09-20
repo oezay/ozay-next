@@ -9,14 +9,13 @@ import ArtistProfile from './ArtistProfile'
 
 export interface ArtistListProps {
   onMouseLeave: () => void
-  onHover: (key: string) => void
   content: Artist[]
   defaultSelected?: Artist
   selectedArtist?: Artist
 }
 
 export default function ArtistList(props: ArtistListProps) {
-  const { content, selectedArtist, onMouseLeave, onHover } = props
+  const { content, selectedArtist, onMouseLeave } = props
 
   const isMobile = useIsMobile()
   const artistCount = content.length
@@ -33,8 +32,6 @@ export default function ArtistList(props: ArtistListProps) {
             <li
               key={id}
               tabIndex={0}
-              onMouseEnter={() => onHover(id)}
-              onFocus={() => onHover(id)}
               className={clsx($.listItem, {
                 // [$.listItemActive]: isSelectedArtist,
               })}
@@ -44,7 +41,11 @@ export default function ArtistList(props: ArtistListProps) {
                   [$.linkContainerActive]: isSelectedArtist,
                 })}
               >
-                <Link href={`/artists/${artist.slug}`} className={$.listItemLink}>
+                <Link
+                  href={isArtistShown ? '/' : `/artists/${artist.slug}`}
+                  className={$.listItemLink}
+                  title={artist.name}
+                >
                   {artist.name}
                 </Link>
               </div>

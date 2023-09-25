@@ -5,7 +5,7 @@ import { Artist } from '@/types/Artist'
 import ArtistList from './ArtistList'
 import ArtistProfile from './ArtistProfile'
 import $ from './ArtistLayout.module.scss'
-import { useIsMobile } from '../hooks/mobile'
+import { useIsMobile } from '@/hooks/mobile'
 
 export interface ArtistListProps {
   artists: Artist[]

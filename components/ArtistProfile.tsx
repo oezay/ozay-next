@@ -2,7 +2,7 @@ import { PortableText } from '@portabletext/react'
 import { Artist } from '@/types/Artist'
 import imageUrlBuilder from '@sanity/image-url'
 import $ from './ArtistProfile.module.scss'
-import { client as sanityClient } from '../sanity/sanity-utils'
+import { client as sanityClient } from '@/sanity/sanity-utils'
 
 export interface ArtistProfileProps {
   artist: Artist

@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { Artist } from '@/types/Artist'
 import $ from './ArtistList.module.scss'
 import clsx from 'clsx'
-import { useIsMobile } from '../hooks/mobile'
+import { useIsMobile } from '@/hooks/mobile'
 import ArtistProfile from './ArtistProfile'
 
 export interface ArtistListProps {

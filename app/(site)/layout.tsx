@@ -1,11 +1,11 @@
 import Link from 'next/link'
 import { getPages } from '@/sanity/sanity-utils'
 import CuraLogo from '@/components/icons/CuraLogo'
+import $ from './layout.module.scss'
+import Navigation from '@/components/Navigation'
+import ImpressumFooter from '@/components/ImpressumFooter'
 import '@/app/globals.scss'
 import '@/app/typekit.scss'
-import $ from './layout.module.scss'
-import { useRouter } from 'next/router'
-import Navigation from '../../components/Navigation'
 
 export const metadata = {
   title: 'CURA Berlin',
@@ -28,6 +28,8 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           </header>
 
           <div className={$.content}>{children}</div>
+
+          <ImpressumFooter />
         </div>
       </body>
     </html>

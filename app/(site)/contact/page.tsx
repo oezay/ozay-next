@@ -1,9 +1,9 @@
 import { getPage } from '@/sanity/sanity-utils'
 import { PortableText } from '@portabletext/react'
 import $ from './page.module.scss'
-import EnvelopeIcon from '../../../components/icons/EnvelopeIcon'
-import PhoneIcon from '../../../components/icons/PhoneIcon'
-import InstagramIcon from '../../../components/icons/InstagramIcon'
+import EnvelopeIcon from '@/components/icons/EnvelopeIcon'
+import PhoneIcon from '@/components/icons/PhoneIcon'
+import InstagramIcon from '@/components/icons/InstagramIcon'
 
 type Props = {
   params: { slug: string }

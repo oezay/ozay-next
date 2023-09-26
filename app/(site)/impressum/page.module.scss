@@ -32,13 +32,22 @@
 
 .messagePane {
   display: flex;
-  overflow: auto;
-  height: 100%;
+  width: 100%;
   flex: 1;
   padding: 1rem;
   background-color: #fff;
   color: black;
   text-align: center;
+
+  @media (width < 1024px) {
+    hyphens: auto;
+    word-break: break-word;
+  }
+
+  @media (width >= 1024px) {
+    overflow: auto;
+    height: 100%;
+  }
 }
 
 .impressumContent {

@@ -6,24 +6,24 @@
 }
 
 .about {
-  background: url('/about-bg.jpg');
-  background-size: cover;
-  background-position: center;
   display: flex;
+  background: url('/about-bg.jpg');
+  background-position: center;
+  background-size: cover;
 }
 
 .aboutText {
-  color: #edf0ef;
-  text-align: center;
-  font-size: 2rem;
   max-width: 45ch;
+  padding: 2rem;
+  margin: auto;
+  color: #edf0ef;
+  font-family: var(--serif);
+  font-size: 2rem;
   font-weight: 300;
   line-height: normal;
-  font-family: var(--serif);
-  margin: auto;
-  padding: 2rem;
+  text-align: center;
 
-  @media (min-width: 1024px) {
+  @media (width >= 1024px) {
     font-size: 3.5rem;
   }
 }

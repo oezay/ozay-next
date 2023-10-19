@@ -2,7 +2,6 @@ import { getPage } from '@/sanity/sanity-utils'
 import { PortableText } from '@portabletext/react'
 import $ from './page.module.scss'
 import EnvelopeIcon from '@/components/icons/EnvelopeIcon'
-import PhoneIcon from '@/components/icons/PhoneIcon'
 import InstagramIcon from '@/components/icons/InstagramIcon'
 
 type Props = {
@@ -26,9 +25,6 @@ export default async function Page({ params }: Props) {
             <a href="https://instagram.com/curaberlin" target="_blank">
               curaberlin
             </a>
-          </p>
-          <p className={$.contactItem}>
-            <PhoneIcon className={$.icon} /> <a href="tel:+4917672314043">+49 17672314043</a>
           </p>
           <p className={$.contactItem}>
             <EnvelopeIcon className={$.icon} />

@@ -23,6 +23,19 @@ export default function Navigation(props: NavigationProps) {
           return null
         }
 
+        if (isActive) {
+          return (
+            <span
+              key={page._id}
+              className={clsx($.navItem, {
+                [$.navItemActive]: isActive,
+              })}
+            >
+              {page.title}
+            </span>
+          )
+        }
+
         return (
           <Link
             key={page._id}

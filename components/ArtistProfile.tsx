@@ -35,6 +35,47 @@ export default function ArtistProfile(props: ArtistProfileProps) {
         {props.full && (
           <div className={$.bio}>
             <PortableText value={props.artist.bio} />
+
+            <ul className={$.socialLinks}>
+              {(props.artist.socials || []).map((social, i) => {
+                let platform = social.platform
+
+                if (
+                  ![
+                    'beatport',
+                    'hor',
+                    'instagram',
+                    'ra',
+                    'soundcloud',
+                    'spotify',
+                    'youtube',
+                  ].includes(platform)
+                ) {
+                  platform = 'web'
+                }
+
+                return (
+                  <li key={`${social.platform}_${i}`} className={$.socialItem}>
+                    <a
+                      className={$.socialLink}
+                      href={social.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      title={platform}
+                    >
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        className={$.socialIcon}
+                        src={`/social/${platform}.svg`}
+                        alt={`link to ${social.platform}`}
+                        width="48"
+                        height="48"
+                      />
+                    </a>
+                  </li>
+                )
+              })}
+            </ul>
           </div>
         )}
       </div>

@@ -68,7 +68,6 @@ export async function getArtists(): Promise<Artist[]> {
             "slug": slug.current,
             "image": image.asset->url,
             "bio": bio,
-            "socials": socials,
             order
         }`
   )
@@ -84,7 +83,7 @@ export async function getArtist(slug: string): Promise<Artist> {
             "slug": slug.current,
             "image": image.asset->url,
             "bio": bio,
-            "socials": socials
+            "socials": socialLinks
         }`,
     { slug }
   )

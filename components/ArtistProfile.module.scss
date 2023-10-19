@@ -29,7 +29,7 @@
   margin-top: auto;
   color: white;
   font-family: var(--serif);
-  font-size: 4rem;
+  font-size: 2rem;
   font-weight: 300;
   line-height: 1;
   text-transform: uppercase;
@@ -58,6 +58,7 @@
   height: 100%;
   max-height: 100vw;
   object-fit: cover;
+  object-position: center;
 
   @media (width <= 1024px) {
     object-position: top;
@@ -66,4 +67,20 @@
   @media (width >= 1024px) {
     height: 100%;
   }
+}
+
+.socialLinks {
+  padding: 0;
+  margin-top: 1.5rem;
+  list-style: none;
+}
+
+.socialItem {
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+.socialIcon {
+  width: 48px;
+  height: 48px;
 }

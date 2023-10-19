@@ -1,5 +1,10 @@
 import { PortableTextBlock } from 'sanity'
 
+export type SocialLinks = {
+  platform: string
+  url: string
+}
+
 export type Artist = {
   _id: string
   _createdAt: Date
@@ -7,7 +12,7 @@ export type Artist = {
   bio: PortableTextBlock[]
   image: string
   slug: string
-  socials: string
+  socials: SocialLinks[]
   url: string
   order: number
 }

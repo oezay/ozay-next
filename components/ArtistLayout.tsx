@@ -15,8 +15,6 @@ export interface ArtistListProps {
 export default function ArtistLayout(props: ArtistListProps) {
   const { artists, selectedArtist } = props
 
-  console.log({ selectedArtist })
-
   const [selected, setHovered] = useState<Artist | null>(null)
 
   const isMobile = useIsMobile()

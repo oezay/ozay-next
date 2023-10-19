@@ -60,7 +60,7 @@ export async function getPage(slug: string): Promise<Page> {
 }
 
 export async function getArtists(): Promise<Artist[]> {
-  return client.fetch(
+  const data = await client.fetch<Artist[]>(
     groq`*[_type == "artist"]{
             _id,
             _createdAt,
@@ -68,9 +68,11 @@ export async function getArtists(): Promise<Artist[]> {
             "slug": slug.current,
             "image": image.asset->url,
             "bio": bio,
-            "socials": socials
+            "socials": socials,
+            order
         }`
   )
+  return data.sort((a, b) => a.order - b.order)
 }
 
 export async function getArtist(slug: string): Promise<Artist> {

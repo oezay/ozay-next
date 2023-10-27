@@ -34,9 +34,11 @@
     white-space: nowrap;
   }
 
-  &:hover {
-    background-color: var(--color-purple);
-    color: white;
+  @media (hover) {
+    &:hover {
+      background-color: var(--color-purple);
+      color: white;
+    }
   }
 }
 

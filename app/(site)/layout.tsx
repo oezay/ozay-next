@@ -1,48 +1,36 @@
 import Link from 'next/link'
-import '../globals.css'
-import { getPages } from '@/sanity/sanity-utils';
+import { getPages } from '@/sanity/sanity-utils'
+import CuraLogo from '@/components/icons/CuraLogo'
+import $ from './layout.module.scss'
+import Navigation from '@/components/Navigation'
+import ImpressumFooter from '@/components/ImpressumFooter'
+import '@/app/globals.scss'
+import '@/app/typekit.scss'
 
 export const metadata = {
   title: 'CURA Berlin',
   description: 'Booking Agency with a big <3',
 }
 
-export default async function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
-
-  // get all of the pages
-
-  const pages = await getPages();
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  const pages = await getPages()
 
   return (
     <html lang="en">
-      <body className='max-w-1xl mx-auto py-2'>
-        
-        <header className='flex items-center justify-between px-2'>
-          <Link 
-            href="/"
-            className="bg-gradient-to-r from-violet-400 to-violet-600 bg-clip-text text-transparent text-2xl"
-          >
-            curaberlin.de
-          </Link>
+      <body className={$.body}>
+        <div className={$.root}>
+          <header className={$.header}>
+            <Link href="/" className={$.logoLink}>
+              <CuraLogo className={$.logoIcon} />
+            </Link>
 
-          <div className='flex items-center gap-3 text-sm text-gray-600'>
+            <Navigation pages={pages} />
+          </header>
 
-            {pages.map((page) => (
-              <Link key={page._id} href={`/${page.slug}`} className='hover:underline'>
-                {page.title}
-              </Link>
-            ))}
-          </div>
-        </header>
-        
-        <main className='py-5'>
-          {children}
-        </main>
+          <div className={$.content}>{children}</div>
 
+          <ImpressumFooter />
+        </div>
       </body>
     </html>
   )

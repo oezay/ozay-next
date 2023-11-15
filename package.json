@@ -10,22 +10,33 @@
   },
   "dependencies": {
     "@portabletext/react": "^2.0.2",
+    "@sanity/image-url": "^1.0.2",
     "@types/node": "18.15.11",
     "@types/react": "18.0.34",
     "@types/react-dom": "18.0.11",
+    "clsx": "^2.0.0",
     "eslint": "8.38.0",
     "eslint-config-next": "13.3.0",
-    "next": "13.3.0",
-    "next-sanity": "^4.1.6",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "sanity": "^3.8.3",
-    "styled-components": "^5.3.9",
-    "typescript": "5.0.4"
+    "jotai": "^2.4.0",
+    "next": "^14.0.0",
+    "next-sanity": "^6.0.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sanity": "^3.15.1",
+    "typescript": "5.0.4",
+    "usehooks-ts": "^2.9.1"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",
-    "postcss": "^8.4.21",
-    "tailwindcss": "^3.3.1"
+    "postcss": "^8.4.29",
+    "postcss-scss": "^4.0.8",
+    "sass": "^1.66.1",
+    "stylelint": "^15.10.3",
+    "stylelint-config-css-modules": "^4.3.0",
+    "stylelint-config-idiomatic-order": "^9.0.0",
+    "stylelint-config-standard": "^34.0.0",
+    "stylelint-config-standard-scss": "^11.0.0",
+    "stylelint-order": "^6.0.3",
+    "tailwindcss": "^3.3.3"
   }
 }

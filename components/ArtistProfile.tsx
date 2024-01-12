@@ -34,8 +34,6 @@ export default function ArtistProfile(props: ArtistProfileProps) {
         </div>
         {props.full && (
           <div className={$.bio}>
-            <PortableText value={props.artist.bio} />
-
             <ul className={$.socialLinks}>
               {(props.artist.socials || []).map((social, i) => {
                 let platform = social.platform
@@ -76,6 +74,8 @@ export default function ArtistProfile(props: ArtistProfileProps) {
                 )
               })}
             </ul>
+
+            <PortableText value={props.artist.bio} />
           </div>
         )}
       </div>

@@ -11,3 +11,4 @@ export default async function ArtistPage({ params }: Props) {
 }
 
 export const fetchCache = 'force-no-store'
+export const dynamic = 'force-dynamic'

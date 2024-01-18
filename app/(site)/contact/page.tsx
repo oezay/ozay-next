@@ -35,3 +35,6 @@ export default async function Page({ params }: Props) {
     </div>
   )
 }
+
+export const fetchCache = 'force-no-store'
+export const dynamic = 'force-dynamic'

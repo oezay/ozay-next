@@ -1,4 +1,6 @@
-const artist = {
+import { SchemaType, defineType } from 'sanity'
+
+const artist = defineType({
   name: 'artist',
   title: 'Artists',
   type: 'document',
@@ -58,7 +60,18 @@ const artist = {
       title: 'Order',
       type: 'number',
     },
+    {
+      name: 'imagePositionDesktop',
+      title: 'Image Offset Desktop',
+      description: 'CSS string for `object-position` property. E.g. `center 20%`',
+      type: 'string',
+    },
+    {
+      name: 'imagePositionMobile',
+      title: 'Image Offset Mobile',
+      type: 'string',
+    },
   ],
-}
+})
 
 export default artist

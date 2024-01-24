@@ -19,6 +19,11 @@ export default function ArtistProfile(props: ArtistProfileProps) {
     .width(1280)
     .url()} 1280w, ${baseImage.width(1920).url()} 1920w`
 
+  const offsetPositionVariables = {
+    ['--image-position-desktop' as string]: props.artist.imagePositionDesktop || 'top',
+    ['--image-position-mobile' as string]: props.artist.imagePositionMobile || 'top',
+  }
+
   return (
     <section className={$.container}>
       <div className={$.contentContainer}>
@@ -29,13 +34,14 @@ export default function ArtistProfile(props: ArtistProfileProps) {
             src={baseImage.width(960).url()}
             srcSet={srcSet}
             alt={`${props.artist.name} cover photo`}
+            style={offsetPositionVariables}
           />
           <h1 className={$.title}>{props.artist.name}</h1>
         </div>
         {props.full && (
           <div className={$.bio}>
             <ul className={$.socialLinks}>
-              {(props.artist.socials || []).map((social, i) => {
+              {(props.artist.socialLinks || []).map((social, i) => {
                 let platform = social.platform
 
                 if (

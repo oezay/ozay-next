@@ -12,7 +12,9 @@ export type Artist = {
   bio: PortableTextBlock[]
   image: string
   slug: string
-  socials: SocialLinks[]
+  socialLinks: SocialLinks[]
   url: string
   order: number
+  imagePositionDesktop?: string
+  imagePositionMobile?: string
 }

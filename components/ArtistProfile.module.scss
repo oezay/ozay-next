@@ -14,10 +14,9 @@
 }
 
 .titleContainer {
-  display: flex;
-  max-width: calc(100% - 3.5rem);
-  padding-bottom: 1rem;
-  margin: auto 1.75rem 0;
+  position: relative;
+  overflow: hidden;
+  flex: 1;
   aspect-ratio: 1/1;
 
   @media (width >= 1024px) {
@@ -26,7 +25,9 @@
 }
 
 .title {
-  margin-top: auto;
+  position: absolute;
+  bottom: 0;
+  margin: 1.75rem 1.75rem 1rem;
   color: white;
   font-family: var(--serif);
   font-size: 2rem;
@@ -50,10 +51,6 @@
 }
 
 .image {
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
   max-height: 100vw;

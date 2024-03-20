@@ -45,6 +45,7 @@ export default function ArtistList(props: ArtistListProps) {
                   href={isArtistShown ? '/' : `/artists/${artist.slug}`}
                   className={$.listItemLink}
                   title={artist.name}
+                  scroll={false}
                 >
                   {artist.name}
                 </Link>

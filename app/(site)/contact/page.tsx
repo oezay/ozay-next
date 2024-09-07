@@ -3,6 +3,7 @@ import { PortableText } from '@portabletext/react'
 import $ from './page.module.scss'
 import EnvelopeIcon from '@/components/icons/EnvelopeIcon'
 import InstagramIcon from '@/components/icons/InstagramIcon'
+import SoundcloudIcon from '@/components/icons/SoundcloudIcon'
 
 type Props = {
   params: { slug: string }
@@ -23,6 +24,12 @@ export default async function Page({ params }: Props) {
           <p className={$.contactItem}>
             <InstagramIcon className={$.icon} />
             <a href="https://instagram.com/curaberlin" target="_blank">
+              curaberlin
+            </a>
+          </p>
+          <p className={$.contactItem}>
+            <SoundcloudIcon className={$.icon} />
+            <a href="https://soundcloud.com/curaberlin" target="_blank">
               curaberlin
             </a>
           </p>

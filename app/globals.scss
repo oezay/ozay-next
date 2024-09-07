@@ -2,9 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-display: swap;
+  font-family: RocGrotesk-WideBold;
+  font-style: normal;
+  font-weight: bold;
+  src: url('/fonts/RocGrotesk-WideBold.woff2') format('woff2'),
+    url('/fonts/RocGrotesk-WideBold.woff') format('woff');
+}
+
 :root {
   --serif: 'new-spirit-condensed';
   --sans-serif: 'roc-grotesk';
+  --sans-serif-wide: 'RocGrotesk-WideBold';
   --color-purple: #7b77bc;
   --color-dark-grey: #292929;
 }

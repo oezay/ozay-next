@@ -1,3 +1,4 @@
+import { type Metadata } from 'next'
 import { getArtist, getArtists } from '@/sanity/sanity-utils'
 import ArtistLayout from '@/components/ArtistLayout'
 
